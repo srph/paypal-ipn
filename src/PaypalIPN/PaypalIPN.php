@@ -7,7 +7,7 @@ use PayPalIPN\Exceptions\InvalidResponseException;
  *
  * Feel free to contribute and submit issues.
  *
- * @version 1.0 alpha
+ * @version 1.2
  * @author 	SRPH
  * @link 	http://github.com/srph/paypal-ipn
  * @uses 	cURL
@@ -68,9 +68,16 @@ class PayPalIPN {
 	 * Whether the URI will either be through SSL or not.
 	 * False by default
 	 *
-	 * @return 	boolean
+	 * @var boolean
 	 */
 	protected $isSSL = false
+	
+	/**
+	 * Scheme used in the URI
+	 * 
+	 * @var string
+	 */
+	protected $scheme;
 
 	/**
 	 * Paypal host constants
@@ -78,16 +85,16 @@ class PayPalIPN {
 	const PAYPAL_HOST = 'www.paypal.com';
     const SANDBOX_HOST = 'www.sandbox.paypal.com';
 
-    /**
-     * Paypal service path
-     */
-    const PATH = '/cgi-bin/webscr';
-
-    /**
-     * NON / SSL scheme constants
-     */
-    const NON_SSL = 'http://';
-    const SSL = 'http://'
+	 /**
+	  * Paypal service path
+	  */
+	 const PATH = '/cgi-bin/webscr';
+	
+	/**
+	 * NON / SSL scheme constants
+	 */
+	const NON_SSL = 'http://';
+	const SSL = 'http://'
 
 	/**
 	 * Create an instance of PaypalIPN
@@ -260,19 +267,19 @@ class PayPalIPN {
 		$path = self::PATH;
 
 		// Fetch the scheme
-		$scheme = $this->getScheme();
+		$this->setScheme();
 
-		$this->uri = "{$scheme}{$this->host}{$path}";
+		$this->uri = "{$this->scheme}{$this->host}{$path}";
 	}
 
 	/**
 	 * Get URI Scheme
 	 *
-	 * @return 	string
+	 * @return 	void
 	 */
-	protected function getScheme()
+	protected function setScheme()
 	{
-		return ( $this->isSSL )
+		$this->scheme = ( $this->isSSL )
 			? self::SSL
 			: self::NON_SSL;
 	}
