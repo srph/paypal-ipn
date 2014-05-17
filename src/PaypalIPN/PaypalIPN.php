@@ -105,7 +105,9 @@ class PayPalIPN {
 	 */
 	public function sandbox($activated = true)
 	{
-		$this->host = self::SANDBOX_HOST;
+		$this->host = ( $activated )
+			? self::SANDBOX_HOST
+			: self::PAYPAL_HOST;
 
 		return $this;
 	}
