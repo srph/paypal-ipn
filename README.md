@@ -6,7 +6,7 @@ PayPalIPN
       $notifier->run();
 
 ### To run the notifier with sandbox mode and SSL
-      $notifier-sandbox()->ssl()->run();
+      $notifier->sandbox()->ssl()->run();
 
 ### You may pass booleans to the sandbox() and ssl() method to simply disable it
 _( Take note that this is entirely the same as $notifier->run() )_
