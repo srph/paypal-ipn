@@ -34,7 +34,6 @@ _( Take note that this is entirely the same as $notifier->run() )_
 ### 1.0:
 
 - Github release.
-- Has has not yet been tested if it actually works.
 - Expect syntactical and logical bugs.
 
 Todos:
