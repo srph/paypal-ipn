@@ -6,11 +6,19 @@ use PayPalIPN\Exceptions\InvalidResponseException;
  * A small library to be able to rapidly use Paypal's
  * Instant Payment Notification, aka IPN.
  *
+ * Feel free to contribute and submit issues.
+ *
  * @version 1.0 alpha
  * @author 	SRPH
  * @link 	http://github.com/srph/paypal-ipn
+ * @uses 	cURL
  * @see 	https://developer.paypal.com/webapps/developer/docs/classic/ipn/ht_ipn/
  * @see 	https://github.com/Quixotix/PHP-PayPal-IPN
+ * 			Inspired the creation of this library. The library was good on its own
+ * 			but I thought it needed some rewrite. Contribution was possible,
+ *			however I wanted to rewrite it in my style. The library also seemed to
+ *			have been unupdated for years, and had no composer implementation. If
+ * 			am wrong about anything, I stand corrected.			
  * @todo 	VERIFIED notification response
  *
  * By default, SSL and sandbox mode is switched off.
