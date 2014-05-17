@@ -3,8 +3,7 @@
 use PayPalIPN\Exceptions\InvalidResponseException;
 
 /**
- * A small library to be able to rapidly use Paypal's
- * Instant Payment Notification, aka IPN.
+ * A small library for Paypal's Instant Payment Notification, aka IPN.
  *
  * Feel free to contribute and submit issues.
  *
