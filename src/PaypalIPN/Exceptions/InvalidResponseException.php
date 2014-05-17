@@ -1,4 +1,4 @@
-<?php namespace PaypalIPN\Exceptions;
+<?php namespace PayPalIPN\Exceptions;
 
 use Exception;
 

@@ -1,6 +1,6 @@
-<?php namespace PaypalIPN\PaypalIPN;
+<?php namespace PayPalIPN\PayPalIPN;
 
-use PaypalIPN\Exceptions\InvalidResponseException;
+use PayPalIPN\Exceptions\InvalidResponseException;
 
 /**
  * A small library to be able to rapidly use Paypal's
@@ -15,7 +15,7 @@ use PaypalIPN\Exceptions\InvalidResponseException;
  *
  * By default, SSL and sandbox mode is switched off.
  * @example
- * $notifier = new PaypalIPN;
+ * $notifier = new PayPalIPN;
  * $notifier->run();
  *
  * To run the notifier with sandbox mode and SSL
@@ -43,7 +43,7 @@ use PaypalIPN\Exceptions\InvalidResponseException;
  * 		@todo 	Test
  */
 
-class PaypalIPN {
+class PayPalIPN {
 
 	/**
 	 * Full URI for the library to listen to
@@ -121,7 +121,7 @@ class PaypalIPN {
 	 * Run the listener and throw exceptions if weird occurences occur
 	 *
 	 * @todo 	VERIFIED RESPONSE
-	 * @throws 	SRPH\PaypalIPN\Exceptions\InvalidResponseException
+	 * @throws 	SRPH\PayPalIPN\Exceptions\InvalidResponseException
 	 * @return 	void
 	 */
 	public function run()
