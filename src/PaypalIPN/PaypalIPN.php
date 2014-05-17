@@ -7,7 +7,7 @@ use PayPalIPN\Exceptions\InvalidResponseException;
  *
  * Feel free to contribute and submit issues.
  *
- * @version 1.2
+ * @version 1.2.1
  * @author 	SRPH
  * @link 	http://github.com/srph/paypal-ipn
  * @uses 	cURL
@@ -42,11 +42,6 @@ use PayPalIPN\Exceptions\InvalidResponseException;
  * 		// Log as you wish
  * }
  *
- * @changelogs
- * 1.0: Github release. Has has not yet been tested if it actually works.
- * Expect syntactical and logical bugs.
- * 		@todo 	VERIFIED RESPONSE
- * 		@todo 	Test
  */
 
 class PayPalIPN {
@@ -83,12 +78,12 @@ class PayPalIPN {
 	 * Paypal host constants
 	 */
 	const PAYPAL_HOST = 'www.paypal.com';
-    const SANDBOX_HOST = 'www.sandbox.paypal.com';
+	const SANDBOX_HOST = 'www.sandbox.paypal.com';
 
-	 /**
-	  * Paypal service path
-	  */
-	 const PATH = '/cgi-bin/webscr';
+	/**
+	 * Paypal service path
+	 */
+	const PATH = '/cgi-bin/webscr';
 	
 	/**
 	 * NON / SSL scheme constants
