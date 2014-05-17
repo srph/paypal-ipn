@@ -12,6 +12,7 @@ Inspired by [PHP-PayPal-IPN](https://github.com/Quixotix/PHP-PayPal-IPN) by [Qui
 
 ### You may pass booleans to the sandbox() and ssl() method to simply disable it
 _( Take note that this is entirely the same as $notifier->run() )_
+
       $notifier->sandbox(false)->ssl(false)->run();
 
 ### Finally, make sure to catch exception thrown if a notification is invalid
