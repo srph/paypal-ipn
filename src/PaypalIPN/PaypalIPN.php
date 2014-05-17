@@ -70,7 +70,7 @@ class PayPalIPN {
 	 *
 	 * @var boolean
 	 */
-	protected $isSSL = false
+	protected $ssl = false
 	
 	/**
 	 * Scheme used in the URI
@@ -127,7 +127,7 @@ class PayPalIPN {
 	 */
 	public function ssl($activated = true)
 	{
-		$this->isSSL = $activated;
+		$this->ssl = $activated;
 
 		return $this;
 	}
@@ -279,7 +279,7 @@ class PayPalIPN {
 	 */
 	protected function setScheme()
 	{
-		$this->scheme = ( $this->isSSL )
+		$this->scheme = ( $this->ssl )
 			? self::SSL
 			: self::NON_SSL;
 	}
