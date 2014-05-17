@@ -1,7 +1,7 @@
 PayPalIPN
 ======
 
-Inspired by [PHP-PayPal-IPN](https://github.com/Quixotix/PHP-PayPal-IPN) by [Quixotix](https://github.com/Quixotix). Although the library worked and was good, I thought it needed some rewrite. I also wanted to rewrite it in my style. The library also seemed to have been unupdated for years. Additionally, it has no composer implementation. If am wrong about anything, I stand corrected.
+Inspired by [PHP-PayPal-IPN](https://github.com/Quixotix/PHP-PayPal-IPN) by [Quixotix](https://github.com/Quixotix). Although the library was working,, I thought it needed some rewrite. I also wanted to rewrite it in my style. The library also seemed to have been unupdated for years. Additionally, it has no composer implementation. If am wrong about anything, I stand corrected.
 
 ### By default, SSL and sandbox mode is switched off.
       $notifier = new PaypalIPN;
