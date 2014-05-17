@@ -23,6 +23,9 @@ _( Take note that this is entirely the same as $notifier->run() )_
 	}
 
 ## Changelogs
+### 1.3.1:
+ - Renamed isSSL property to ssl
+
 ### 1.2:
  - Fixed misdocumentations
  - Created a property for the URI scheme
