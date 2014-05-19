@@ -217,16 +217,18 @@ class PayPalIPN {
 		foreach($raw as $data)
 		{
 			// Separate value from its key
-			$key = explode('=', $key);
+			$data = explode('=', $data);
 
 			// If the key was on the format: (foo=bar), then register
 			// the key (foo) with its respective value (bar)
 			// in our decoded data
-			if(count($key) == 2)
+			if(count($data) == 2)
 			{
-				$data = [$data[0]] = urldecode($data[1]);
+				$decoded = [$data[0]] = urldecode($data[1]);
 			}
 		}
+		
+		return $decoded;
 	}
 
 	/**
