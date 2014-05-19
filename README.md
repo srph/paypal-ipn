@@ -26,6 +26,8 @@ _( Take note that this is entirely the same as $notifier->run() )_
 ## Changelogs
 ### 1.2.1:
  - Renamed isSSL property to ssl
+ - Fixed decode method not returning anything
+ - Fixed unrenamed variables
 
 ### 1.2:
  - Fixed misdocumentations
