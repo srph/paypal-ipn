@@ -9,10 +9,10 @@ Inspired by [PHP-PayPal-IPN](https://github.com/Quixotix/PHP-PayPal-IPN) by [Qui
 
 ### There are two ways too run the notifier with sandbox mode and SSL
 
-## Method 1 - By calling sandbox() and ssl()
+*Method 1 - By calling sandbox() and ssl()*
 	$notifier->sandbox()->ssl()->run();
      
-## Method 2 - By instantiating PayPalIPN with options. arg1 = sandbox, arg2 = ssl
+*Method 2 - By instantiating PayPalIPN with options. arg1 = sandbox, arg2 = ssl*
 	$notifier = new PayPalIPN(true, true);
 	$notifier->run();
 
