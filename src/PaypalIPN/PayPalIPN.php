@@ -65,7 +65,7 @@ class PayPalIPN {
 	 *
 	 * @var boolean
 	 */
-	protected $ssl = false
+	protected $ssl;
 	
 	/**
 	 * Scheme used in the URI
@@ -94,9 +94,10 @@ class PayPalIPN {
 	/**
 	 * Create an instance of PaypalIPN
 	 */
-	public function __construct()
+	public function __construct($sandbox = false, $ssl = false)
 	{
-		$this->host = self::PAYPAL_HOST;
+		$this->sandbox($sandbox);
+		$this->ssl($ssl);
 	}
 
 	/**
@@ -158,7 +159,7 @@ class PayPalIPN {
 	 */
 	protected function listen()
 	{
-		$fields = $this->getFields();
+		$request = $this->getRequest();
 
 		$ch = curl_init($this->uri);
 		curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
@@ -182,7 +183,7 @@ class PayPalIPN {
 	 *
 	 * @return 	string
 	 */
-	protected function getFields()
+	protected function getRequest()
 	{
 		// Get raw data from the input stream
 		$raw = file_get_contents('php://input');
@@ -190,12 +191,12 @@ class PayPalIPN {
 		// Reading POSTed data directly from $_POST causes serialization
 		// issues with array data in the POST. Decode the raw post data
 		// from the input stream
-		$data = $this->decode($raw);
+		$decoded = $this->decode($raw);
 
 		// Read the IPN message sent from PayPal and prepend string
-		$fields = $this->getFields('cmd=_notify-validate');
+		$encoded = $this->encode('cmd=_notify-validate');
 
-		return $fields;
+		return $encoded;
 	}
 
 	/**
@@ -238,9 +239,9 @@ class PayPalIPN {
 	 * @param 	string 	$prepend
 	 * @return 	string
 	 */
-	protected function getFields($prepend)
+	protected function encode($prepend = 'cmd=_notify-validate')
 	{
-		$fields = $prepend;
+		$message = $prepend;
 
 		foreach($this->data as $key => $value)
 		{
@@ -248,10 +249,10 @@ class PayPalIPN {
 				? urlencode( stripslashes($value) )
 				: urlencode( $value );
 
-			$fields .= "&{$key}={$value}";
+			$message .= "&{$key}={$value}";
 		}
 
-		return $fields;
+		return $message;
 	}
 
 	/**
