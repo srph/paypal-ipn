@@ -7,7 +7,7 @@ use PayPalIPN\Exceptions\InvalidResponseException;
  *
  * Feel free to contribute and submit issues.
  *
- * @version 1.2.1
+ * @version 	1.3
  * @author 	SRPH
  * @link 	http://github.com/srph/paypal-ipn
  * @uses 	cURL
@@ -25,8 +25,12 @@ use PayPalIPN\Exceptions\InvalidResponseException;
  * $notifier->run();
  *
  * To run the notifier with sandbox mode and SSL
- * @example
+ * @example #1 By calling sandbox() and ssl()
  * $notifier->sandbox()->ssl()->run();
+ * 
+ * @example #2 By instantiating PayPalIPN with options. arg1 = sandbox, arg2 = ssl
+ * $notifier = new PayPalIPN(true, true);
+ * $notifier->run();
  *
  * You may pass booleans to the sandbox() and ssl() method to simply disable it
  * ( Take note that this is entirely the same as $notifier->run() )
