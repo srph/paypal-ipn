@@ -1,6 +1,8 @@
 PayPalIPN
 ======
 
+**Broken** (as of 08/29/2014), please do not use. This was never unit-tested or manually tested with an application. However, this may serve as a reference for future design patterns (if ever it made sense).
+
 Inspired by [PHP-PayPal-IPN](https://github.com/Quixotix/PHP-PayPal-IPN) by [Quixotix](https://github.com/Quixotix). Although the library was working,, I thought it needed some rewrite. I also wanted to rewrite it in my style. The library also seemed to have been unupdated for years. Additionally, it has no composer implementation. If am wrong about anything, I stand corrected.
 
 ### By default, SSL and sandbox mode is switched off.
